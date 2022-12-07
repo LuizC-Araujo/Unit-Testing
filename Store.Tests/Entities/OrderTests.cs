@@ -7,12 +7,15 @@ namespace Store.Tests.Entities;
 [TestClass]
 public class OrderTests
 {
+    private readonly Customer _customer = new Customer("Luiz Araujo", "luiz@gmail.com");
+    private readonly Product _product = new Product("Produto 1", 10, true);
+    private readonly Discount _discount = new Discount(10, DateTime.Now.AddDays(5));
+    
     [TestMethod]
     [TestCategory("Domain")]
     public void Should_Generate_Number_With_8_Characters_When_Valid_Order()
     {
-        var customer = new Customer("Luiz Araujo", "luiz@gmail.com");
-        var order = new Order(customer, 0, null);
+        var order = new Order(_customer, 0, null);
         Assert.AreEqual(8, order.Number.Length);
     }
 
