@@ -30,7 +30,9 @@ public class OrderTests
     [TestCategory("Domain")]
     public void Should_Change_Status_To_Waiting_Delivery_When_Order_Payment_Done()
     {
-        Assert.Fail();
+        _order.AddItem(_product, 1);
+        _order.Pay(_order.Total());
+        Assert.AreEqual(EOrderStatus.WaitingDelivery, _order.Status);
     }
 
     [TestMethod]
