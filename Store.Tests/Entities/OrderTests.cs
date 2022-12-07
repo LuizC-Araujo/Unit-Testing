@@ -90,7 +90,9 @@ public class OrderTests
     [TestCategory("Domain")]
     public void Should_Total_Be_50_When_Discount_10()
     {
-        Assert.Fail();
+        var order = new Order(_customer, 10, _discount);
+        order.AddItem(_product, 5);
+        Assert.AreEqual(50, order.Total());
     }
     
     [TestMethod]
