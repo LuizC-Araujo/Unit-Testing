@@ -23,7 +23,8 @@ public class OrderTests
     [TestCategory("Domain")]
     public void Should_Change_Status_To_Waiting_Payment_When_New_Order()
     {
-        Assert.Fail();
+        var order = new Order(_customer, 0, null);
+        Assert.AreEqual(EOrderStatus.WaitingPayment, order.Status);
     }
 
     [TestMethod]
