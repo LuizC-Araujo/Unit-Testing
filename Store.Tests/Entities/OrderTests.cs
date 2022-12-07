@@ -39,14 +39,16 @@ public class OrderTests
     [TestCategory("Domain")]
     public void Should_Change_Status_To_Cancelled_When_Cancelled_Order()
     {
-        Assert.Fail();
+        _order.Cancel();
+        Assert.AreEqual(EOrderStatus.Canceled, _order.Status);
     }
 
     [TestMethod]
     [TestCategory("Domain")]
     public void Should_Not_Add_New_Item_When_No_Product()
     {
-        Assert.Fail();
+        _order.AddItem(null, 10);
+        Assert.AreEqual(0, _order.Items.Count);
     }
     
     [TestMethod]
