@@ -10,21 +10,20 @@ public class OrderTests
     private readonly Customer _customer = new Customer("Luiz Araujo", "luiz@gmail.com");
     private readonly Product _product = new Product("Produto 1", 10, true);
     private readonly Discount _discount = new Discount(10, DateTime.Now.AddDays(5));
+    private readonly Order _order = new Order(new Customer("Luiz Araujo", "luiz@gmail.com"), 0, null);
     
     [TestMethod]
     [TestCategory("Domain")]
     public void Should_Generate_Number_With_8_Characters_When_Valid_Order()
     {
-        var order = new Order(_customer, 0, null);
-        Assert.AreEqual(8, order.Number.Length);
+        Assert.AreEqual(8, _order.Number.Length);
     }
 
     [TestMethod]
     [TestCategory("Domain")]
     public void Should_Change_Status_To_Waiting_Payment_When_New_Order()
     {
-        var order = new Order(_customer, 0, null);
-        Assert.AreEqual(EOrderStatus.WaitingPayment, order.Status);
+        Assert.AreEqual(EOrderStatus.WaitingPayment, _order.Status);
     }
 
     [TestMethod]
