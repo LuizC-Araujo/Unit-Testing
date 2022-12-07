@@ -55,7 +55,8 @@ public class OrderTests
     [TestCategory("Domain")]
     public void Should_Not_Add_New_Item_When_Product_Less_Or_Equal_Zero()
     {
-        Assert.Fail();
+        _order.AddItem(_product, 0);
+        Assert.AreEqual(_order.Items.Count, 0);
     }
     
     [TestMethod]
