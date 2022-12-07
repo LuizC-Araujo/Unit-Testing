@@ -9,6 +9,7 @@ public class OrderTests
 {
     private readonly Customer _customer = new Customer("Luiz Araujo", "luiz@gmail.com");
     private readonly Product _product = new Product("Produto 1", 10, true);
+    private readonly Product _product2 = new Product("Produto 2", 50, true);
     private readonly Discount _discount = new Discount(10, DateTime.Now.AddDays(5));
     private readonly Order _order = new Order(new Customer("Luiz Araujo", "luiz@gmail.com"), 0, null);
     
@@ -63,7 +64,8 @@ public class OrderTests
     [TestCategory("Domain")]
     public void Should_Total_Be_50_When_New_Order_Valid()
     {
-        Assert.Fail();
+        _order.AddItem(_product2, 1);
+        Assert.AreEqual(50, _order.Total());
     }
     
     [TestMethod]
