@@ -81,7 +81,9 @@ public class OrderTests
     [TestCategory("Domain")]
     public void Should_Total_Be_60_When_Invalid_Discount()
     {
-        Assert.Fail();
+        var order = new Order(_customer, 10, null);
+        order.AddItem(_product, 5);
+        Assert.AreEqual(60, order.Total());
     }
     
     [TestMethod]
