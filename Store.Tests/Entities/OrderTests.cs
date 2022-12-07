@@ -9,9 +9,11 @@ public class OrderTests
 {
     [TestMethod]
     [TestCategory("Domain")]
-    public void Should_Generate_Number_With_8_Caractereres_When_Valid_Order()
+    public void Should_Generate_Number_With_8_Characters_When_Valid_Order()
     {
-        Assert.Fail();
+        var customer = new Customer("Luiz Araujo", "luiz@gmail.com");
+        var order = new Order(customer, 0, null);
+        Assert.AreEqual(8, order.Number.Length);
     }
 
     [TestMethod]
