@@ -56,12 +56,4 @@ public class ProductTests
         var product = new Product("Produto 1", 20, true);
         Assert.AreEqual(true, product.IsValid);
     }
-    
-    [TestMethod]
-    [TestCategory("Domain")]
-    public void Should_Not_Add_New_Item_When_No_Product()
-    {
-        _order.AddItem(null, 10);
-        Assert.AreEqual(0, _order.Items.Count);
-    }
 }

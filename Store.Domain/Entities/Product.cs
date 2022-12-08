@@ -14,10 +14,7 @@ public class Product : Entity
             .Requires()
             .IsNotNullOrEmpty(title, "Title", "Título inválido!")
             .IsNotNullOrWhiteSpace(title, "Title", "Título inválido!")
-            .IsNotNull(price, "Price", "Preço inválido")
-            .IsGreaterThan(price, 0, "Price")
-            .IsNotNull(active, "Active", "O ativo deve ser verdadeiro ou falso"));
-            
+            .IsGreaterThan(price, 0, "Price"));
     }
 
     public string Title { get; private set; }
