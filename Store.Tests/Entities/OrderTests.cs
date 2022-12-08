@@ -108,6 +108,8 @@ public class OrderTests
     [TestCategory("Domain")]
     public void Should_Return_Invalid_When_No_Customer()
     {
-        Assert.Fail();
+        var order = new Order(null, 10, _discount);
+        order.AddItem(_product, 5);
+        Assert.IsFalse(order.IsValid);
     }
 }
