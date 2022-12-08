@@ -8,6 +8,7 @@ public class CustomerTests
 {
     private readonly Product _product = new Product("Produto 1", 10, true);
     private readonly Discount _discount = new Discount(10, DateTime.Now.AddDays(4));
+    private readonly Customer _customer = new Customer("Luiz Araujo", "luiz@gmail.com");
     
     [TestMethod]
     [TestCategory("Domain")]
@@ -27,19 +28,11 @@ public class CustomerTests
     
     [TestMethod]
     [TestCategory("Domain")]
-    public void Should_Return_Valid_When_Customer_Valid_Name()
+    public void Should_Return_Valid_When_Customer_Valid_Name_And_Email()
     {
-        var customer = new Customer("Luiz", "luiz@gmail.com");
-        Assert.AreEqual(true, customer.IsValid);
+        Assert.AreEqual(true, _customer.IsValid);
     }
-    
-    [TestMethod]
-    [TestCategory("Domain")]
-    public void Should_Return_Valid_When_Customer_Valid_Email()
-    {
-        Assert.Fail();
-    }
-    
+
     [TestMethod]
     [TestCategory("Domain")]
     public void Should_Return_Invalid_When_No_Customer()
