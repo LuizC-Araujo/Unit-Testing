@@ -11,6 +11,34 @@ public class CustomerTests
     
     [TestMethod]
     [TestCategory("Domain")]
+    public void Should_Return_Invalid_When_Customer_Invalid_Name()
+    {
+        Assert.Fail();
+    }
+    
+    [TestMethod]
+    [TestCategory("Domain")]
+    public void Should_Return_Invalid_When_Customer_Invalid_Email()
+    {
+        Assert.Fail();
+    }
+    
+    [TestMethod]
+    [TestCategory("Domain")]
+    public void Should_Return_Invalid_When_Customer_valid_Name()
+    {
+        Assert.Fail();
+    }
+    
+    [TestMethod]
+    [TestCategory("Domain")]
+    public void Should_Return_Invalid_When_Customer_Valid_Email()
+    {
+        Assert.Fail();
+    }
+    
+    [TestMethod]
+    [TestCategory("Domain")]
     public void Should_Return_Invalid_When_No_Customer()
     {
         var order = new Order(null, 10, _discount);
