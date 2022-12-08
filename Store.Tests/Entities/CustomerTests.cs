@@ -13,7 +13,8 @@ public class CustomerTests
     [TestCategory("Domain")]
     public void Should_Return_Invalid_When_Customer_Invalid_Name()
     {
-        Assert.Fail();
+        var customer = new Customer(null, "luiz@gmail.com");
+        Assert.AreEqual(false, customer.IsValid);
     }
     
     [TestMethod]
