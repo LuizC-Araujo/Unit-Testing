@@ -17,6 +17,54 @@ public class ProductTests
         _order.AddItem(_product, 0);
         Assert.AreEqual(_order.Items.Count, 0);
     }
+    [TestMethod]
+    [TestCategory("Domain")]
+    public void Should_Return_Invalid_When_Title_Empty()
+    {
+        Assert.Fail();
+    }
+    
+    [TestMethod]
+    [TestCategory("Domain")]
+    public void Should_Return_Invalid_When_Title_Invalid()
+    {
+        Assert.Fail();
+    }
+    
+    [TestMethod]
+    [TestCategory("Domain")]
+    public void Should_Return_Invalid_When_Title_White_Space()
+    {
+        Assert.Fail();
+    }
+    
+    [TestMethod]
+    [TestCategory("Domain")]
+    public void Should_Return_Invalid_When_Price_Invalid()
+    {
+        Assert.Fail();
+    }
+    
+    [TestMethod]
+    [TestCategory("Domain")]
+    public void Should_Return_Invalid_When_Price_Is_Zero()
+    {
+        Assert.Fail();
+    }
+    
+    [TestMethod]
+    [TestCategory("Domain")]
+    public void Should_Return_Invalid_When_Active_Invalid()
+    {
+        Assert.Fail();
+    }
+    
+    [TestMethod]
+    [TestCategory("Domain")]
+    public void Should_Return_Valid_When_Prodcut_Valid()
+    {
+        Assert.Fail();
+    }
     
     [TestMethod]
     [TestCategory("Domain")]

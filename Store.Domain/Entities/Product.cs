@@ -1,4 +1,6 @@
-﻿namespace Store.Domain.Entities;
+﻿using Flunt.Validations;
+
+namespace Store.Domain.Entities;
 
 public class Product : Entity
 {
@@ -7,6 +9,15 @@ public class Product : Entity
         Title = title;
         Price = price;
         Active = active;
+        
+        AddNotifications(new Contract<Product>()
+            .Requires()
+            .IsNotNullOrEmpty(title, "Title", "Título inválido!")
+            .IsNotNullOrWhiteSpace(title, "Title", "Título inválido!")
+            .IsNotNull(price, "Price", "Preço inválido")
+            .IsGreaterThan(0, price, "Price")
+            .IsNotNull(active, "Active", "O ativo deve ser verdadeiro ou falso"));
+            
     }
 
     public string Title { get; private set; }
