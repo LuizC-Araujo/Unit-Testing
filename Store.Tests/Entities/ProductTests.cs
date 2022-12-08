@@ -29,7 +29,8 @@ public class ProductTests
     [TestCategory("Domain")]
     public void Should_Return_Invalid_When_Title_Invalid()
     {
-        Assert.Fail();
+        var product = new Product(null, 20, true);
+        Assert.AreEqual(false, product.IsValid);
     }
     
     [TestMethod]
