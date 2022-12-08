@@ -21,7 +21,8 @@ public class CustomerTests
     [TestCategory("Domain")]
     public void Should_Return_Invalid_When_Customer_Invalid_Email()
     {
-        Assert.Fail();
+        var customer = new Customer("Luiz", null);
+        Assert.AreEqual(false, customer.IsValid);
     }
     
     [TestMethod]
