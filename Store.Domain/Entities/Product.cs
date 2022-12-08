@@ -15,7 +15,7 @@ public class Product : Entity
             .IsNotNullOrEmpty(title, "Title", "Título inválido!")
             .IsNotNullOrWhiteSpace(title, "Title", "Título inválido!")
             .IsNotNull(price, "Price", "Preço inválido")
-            .IsGreaterThan(0, price, "Price")
+            .IsGreaterThan(price, 0, "Price")
             .IsNotNull(active, "Active", "O ativo deve ser verdadeiro ou falso"));
             
     }
