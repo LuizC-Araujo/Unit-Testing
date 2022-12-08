@@ -45,6 +45,22 @@ public class OrderTests
 
     [TestMethod]
     [TestCategory("Domain")]
+    public void Should_Not_Add_New_Item_When_Product_Invalid()
+    {
+        _order.AddItem(null, 10);
+        Assert.AreEqual(0, _order.Items.Count);
+    }
+    
+    [TestMethod]
+    [TestCategory("Domain")]
+    public void Should_Not_Add_New_Item_When_Product_Zero()
+    {
+        _order.AddItem(_product, 0);
+        Assert.AreEqual(0, _order.Items.Count);
+    }
+    
+    [TestMethod]
+    [TestCategory("Domain")]
     public void Should_Total_Be_50_When_New_Order_Valid()
     {
         _order.AddItem(_product, 5);
