@@ -40,19 +40,13 @@ public class ProductTests
         var product = new Product("   ", 30, true);
         Assert.AreEqual(false, product.IsValid);
     }
-    
-    [TestMethod]
-    [TestCategory("Domain")]
-    public void Should_Return_Invalid_When_Price_Invalid()
-    {
-        Assert.Fail();
-    }
-    
+
     [TestMethod]
     [TestCategory("Domain")]
     public void Should_Return_Invalid_When_Price_Is_Zero()
     {
-        Assert.Fail();
+        var product = new Product("Produto 1", 0, true);
+        Assert.AreEqual(false, product.IsValid);
     }
     
     [TestMethod]
