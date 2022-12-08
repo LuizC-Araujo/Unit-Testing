@@ -27,14 +27,15 @@ public class CustomerTests
     
     [TestMethod]
     [TestCategory("Domain")]
-    public void Should_Return_Invalid_When_Customer_valid_Name()
+    public void Should_Return_Valid_When_Customer_Valid_Name()
     {
-        Assert.Fail();
+        var customer = new Customer("Luiz", "luiz@gmail.com");
+        Assert.AreEqual(true, customer.IsValid);
     }
     
     [TestMethod]
     [TestCategory("Domain")]
-    public void Should_Return_Invalid_When_Customer_Valid_Email()
+    public void Should_Return_Valid_When_Customer_Valid_Email()
     {
         Assert.Fail();
     }
