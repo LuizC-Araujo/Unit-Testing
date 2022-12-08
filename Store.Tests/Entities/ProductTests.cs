@@ -37,7 +37,8 @@ public class ProductTests
     [TestCategory("Domain")]
     public void Should_Return_Invalid_When_Title_White_Space()
     {
-        Assert.Fail();
+        var product = new Product("   ", 30, true);
+        Assert.AreEqual(false, product.IsValid);
     }
     
     [TestMethod]
