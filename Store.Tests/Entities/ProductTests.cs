@@ -21,7 +21,8 @@ public class ProductTests
     [TestCategory("Domain")]
     public void Should_Return_Invalid_When_Title_Empty()
     {
-        Assert.Fail();
+        var product = new Product("", 15, true);
+        Assert.AreEqual(false, product.IsValid);
     }
     
     [TestMethod]
